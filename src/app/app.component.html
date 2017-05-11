@@ -3,7 +3,7 @@
     <span>Shopping List</span>
     <span class="sl-spacer"></span>
   </md-toolbar>
-  <nav md-tab-nav-bar>
+  <nav md-tab-nav-bar color="accent">
     <a md-tab-link *ngFor="let tab of navLinks" [routerLink]="tab.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
     {{tab.label}}
   </a>
