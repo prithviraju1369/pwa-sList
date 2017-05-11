@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 
+
 import 'hammerjs';
 
 @NgModule({
@@ -24,6 +25,7 @@ import 'hammerjs';
     HttpModule,
     AppRoutingModule,
     MaterialModule,
+    
     IndexModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule,PreloadAllModules  } from '@angular/router';
+import { Routes, RouterModule  } from '@angular/router';
 
-// all route and high level routes with lazy loading
-// + denotes lazy loading for those modules
+
 const routes: Routes = [
  { path: '', redirectTo: '/index', pathMatch: 'full' },
  { path: 'home', loadChildren: './+home/home.module#HomeModule' },
+ { path: 'list', loadChildren: './+list/list.module#ListModule' },
  { path: 'help', loadChildren: './+help/help.module#HelpModule' },
 ];
 
