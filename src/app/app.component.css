@@ -1,0 +1,7 @@
+.sl-spacer{
+    flex: 1 1 auto;
+}
+#mainContainer{
+    box-sizing: border-box;
+    overflow-y: auto;
+}

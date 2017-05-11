@@ -2,8 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+import {MaterialModule} from './../material/material.module';
+
+import { IndexModule } from './index/index.module';
+
+import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
+
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -12,9 +21,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
+    MaterialModule,
+    IndexModule,
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
