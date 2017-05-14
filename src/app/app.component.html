@@ -1,10 +1,10 @@
 <div>
   <md-toolbar color="primary">
+    <span>Shopping List</span>
+    <span class="sl-spacer"></span>
     <span class="toolbar-img-align" style="cursor: pointer;">
       <img src="./../assets/images/logo_fergg_100px.jpg">
     </span>
-    <span class="sl-spacer"></span>
-    <span>Shopping List</span>
   </md-toolbar>
   <nav md-tab-nav-bar>
     <a md-tab-link *ngFor="let tab of navLinks" [ngClass]="{'active': rla.isActive}" [routerLink]="tab.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">

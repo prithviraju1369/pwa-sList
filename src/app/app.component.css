@@ -20,3 +20,9 @@ nav.fixed {
     z-index:999;
     transition:0.2s top cubic-bezier(.3,.73,.3,.74);
 }
+.toolbar-img-align img{
+    /*border-radius: 10px;*/
+}
+md-toolbar{
+    padding-right: 2px;
+}
