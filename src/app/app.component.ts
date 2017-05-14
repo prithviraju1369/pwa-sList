@@ -1,4 +1,4 @@
-import { Component ,ElementRef,AfterViewInit,HostListener} from '@angular/core';
+import { Component,Renderer,ViewChild,ElementRef,AfterViewInit,HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,30 @@ export class AppComponent implements AfterViewInit{
     {label: 'List', link: 'list'},
     {label: 'Help', link: 'help'}
   ];
+  globalListenFunc: Function;
+
 
   @HostListener('window:resize', ['$event'])  onResize(event) {
     this.setScroll();
   }
 
-  constructor(private el: ElementRef) {
+
+
+  constructor(private el: ElementRef,private renderer: Renderer) {
+    let self=this;
+    let navEle;
+    this.globalListenFunc = renderer.listenGlobal('window', 'scroll', (event) => {
+       navEle=self.el.nativeElement.getElementsByTagName('nav');
+       if(event.currentTarget.scrollY>64){
+          if(navEle && navEle.length>0){
+            navEle[0].classList.add('fixed');
+          }
+       }else{
+         if(navEle && navEle.length>0){
+            navEle[0].classList.remove('fixed');
+         }
+       }
+    });
   }
   ngAfterViewInit(){
     this.setScroll()
