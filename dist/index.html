@@ -8,7 +8,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="/manifest.json">
-<link href="styles.2c02d94df948e6193a22.bundle.css" rel="stylesheet"/></head>
+  <style>
+    html {
+      height: 100vh;
+      max-width:100vw;
+      overflow-x: hidden;
+      /*box-sizing: border-box;*/
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+    body{
+        position: relative;
+        margin: 0;
+        /*padding-bottom: 6rem;*/
+        font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    .load-container{
+        position: relative;
+        display: flex;
+        height:50vh;
+        align-items: center;
+        justify-content: center;
+    }
+    .loader {
+        border: 16px solid #f3f3f3;
+        /* Light grey */
+        border-top: 16px solid #009688;
+        /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+  </style>
+<link href="styles.4ee18362a29babe8b5e5.bundle.css" rel="stylesheet"/></head>
 <body>
   <app-root>
     <div class="load-container">
