@@ -1,0 +1,21 @@
+<div class="create-container">
+    <h3>Create New Shopping List</h3>
+    <div class="create-card">
+        <div class="">
+            <md-input-container class="create-input">
+                <input mdInput placeholder="Title" [(ngModel)]="sList.title">
+            </md-input-container>
+            <md-input-container class="create-input">
+                <input mdInput placeholder="Description" [(ngModel)]="sList.description">
+            </md-input-container>
+            <md-input-container class="create-input">
+                <input mdInput placeholder="Name" [(ngModel)]="sList.name">
+            </md-input-container>
+            <md-input-container class="create-input">
+                <input mdInput placeholder="Email" type="email" [(ngModel)]="sList.email">
+            </md-input-container>
+             <button md-raised-button (click)="addUsers()" color="primary">Add User</button>
+            <add-user *ngFor="let user of sList.users; let i = index" [user]="user" [index]="i" (onDelete)="onDelete($event)"></add-user>
+        </div>
+    </div>
+</div>

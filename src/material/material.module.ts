@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule,MdToolbarModule,MdTabsModule} from '@angular/material';
+import {MdButtonModule, 
+  MdCheckboxModule,
+  MdToolbarModule,
+  MdTabsModule,
+  MdInputModule
+} from '@angular/material';
 
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
-    MdButtonModule,MdCheckboxModule,MdToolbarModule,MdTabsModule
+    MdButtonModule,MdCheckboxModule,MdToolbarModule,MdTabsModule,
+    MdInputModule
+
   ],
   exports: [
-    BrowserAnimationsModule,
-    MdButtonModule,MdCheckboxModule,MdToolbarModule,MdTabsModule
+    MdButtonModule,MdCheckboxModule,MdToolbarModule,MdTabsModule,
+    MdInputModule
   ],
   providers: [],
 })

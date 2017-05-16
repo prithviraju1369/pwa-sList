@@ -9,6 +9,7 @@ export class AppComponent implements AfterViewInit{
   title = 'app works!';
   navLinks=[
     {label: 'Home', link: 'home'},
+    {label: 'Create', link: 'create'},
     {label: 'List', link: 'list'},
     {label: 'Help', link: 'help'}
   ];

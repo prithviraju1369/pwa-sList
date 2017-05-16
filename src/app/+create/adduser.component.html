@@ -1,0 +1,12 @@
+<div class="add-user-container">
+    <md-input-container class="add-user-input">
+        <input mdInput placeholder="Name" [(ngModel)]="user.name">
+    </md-input-container>
+    <md-input-container class="add-user-input">
+        <input mdInput placeholder="Email" type="email" required [(ngModel)]="user.email">
+    </md-input-container>
+    <picture>
+        <img src="./../../assets/images/ic_clear_black_18dp_1x.png" srcset="./../../assets/images/ic_clear_black_18dp_2x.png" 
+        alt="Clear" (click)="deleteUser()">
+    </picture>
+</div>

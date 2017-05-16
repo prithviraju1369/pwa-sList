@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 import 'hammerjs';
 
@@ -24,8 +26,8 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MaterialModule,
-    
     IndexModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
