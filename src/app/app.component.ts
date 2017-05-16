@@ -13,6 +13,7 @@ export class AppComponent implements AfterViewInit{
     {label: 'List', link: 'list'},
     {label: 'Help', link: 'help'}
   ];
+  isSticked:boolean=false;
   globalListenFunc: Function;
 
 
@@ -24,19 +25,25 @@ export class AppComponent implements AfterViewInit{
 
   constructor(private el: ElementRef,private renderer: Renderer) {
     let self=this;
-    // let navEle;
-    // this.globalListenFunc = renderer.listenGlobal('window', 'scroll', (event) => {
-    //    navEle=self.el.nativeElement.getElementsByTagName('nav');
-    //    if(event.currentTarget.scrollY >64){
-    //       if(navEle && navEle.length>0){
-    //         navEle[0].classList.add('fixed');
-    //       }
-    //    }else{
-    //      if(navEle && navEle.length>0){
-    //         navEle[0].classList.remove('fixed');
-    //      }
-    //    }
-    // });
+    let navEle;
+    this.globalListenFunc = renderer.listenGlobal('window', 'scroll', (event) => {
+       navEle=self.el.nativeElement.getElementsByTagName('nav');
+       if(event.currentTarget.scrollY >64){
+          if(navEle && navEle.length>0){
+            if(!self.isSticked){
+              self.isSticked=true;
+              navEle[0].classList.add('fixed');
+            }
+          }
+       }else{
+         if(navEle && navEle.length>0){
+           if(self.isSticked){
+            self.isSticked=false;
+            navEle[0].classList.remove('fixed');
+           }
+         }
+       }
+    });
   }
   ngAfterViewInit(){
     this.setScroll()
