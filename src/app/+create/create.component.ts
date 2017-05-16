@@ -21,5 +21,8 @@ export class CreateComponent{
     onDelete(i){
         this.sList.users.splice(i, 1);
     }
+    create(){
+        
+    }
     
 };

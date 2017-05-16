@@ -27,7 +27,8 @@ export class AppComponent implements AfterViewInit{
     let navEle;
     this.globalListenFunc = renderer.listenGlobal('window', 'scroll', (event) => {
        navEle=self.el.nativeElement.getElementsByTagName('nav');
-       if(event.currentTarget.scrollY>64){
+       debugger
+       if(event.currentTarget.scrollY || event.currentTarget.pageYOffset >64){
           if(navEle && navEle.length>0){
             navEle[0].classList.add('fixed');
           }
