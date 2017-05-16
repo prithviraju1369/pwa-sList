@@ -1,5 +1,7 @@
 import { Component,Renderer,ViewChild,ElementRef,AfterViewInit,HostListener} from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/observable/fromEvent';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +15,6 @@ export class AppComponent implements AfterViewInit{
     {label: 'List', link: 'list'},
     {label: 'Help', link: 'help'}
   ];
-  isSticked:boolean=false;
   globalListenFunc: Function;
 
 
@@ -26,21 +27,16 @@ export class AppComponent implements AfterViewInit{
   constructor(private el: ElementRef,private renderer: Renderer) {
     let self=this;
     let navEle;
-    this.globalListenFunc = renderer.listenGlobal('window', 'scroll', (event) => {
-       navEle=self.el.nativeElement.getElementsByTagName('nav');
-       if(event.currentTarget.scrollY >64){
+    var source$ = Observable.fromEvent(window, 'scroll').debounceTime(100);
+    source$.subscribe((x:any)=>{
+      navEle=self.el.nativeElement.getElementsByTagName('nav');
+       if(window.scrollY >64){
           if(navEle && navEle.length>0){
-            if(!self.isSticked){
-              self.isSticked=true;
-              navEle[0].classList.add('fixed');
-            }
+            navEle[0].classList.add('fixed');
           }
        }else{
          if(navEle && navEle.length>0){
-           if(self.isSticked){
-            self.isSticked=false;
             navEle[0].classList.remove('fixed');
-           }
          }
        }
     });
