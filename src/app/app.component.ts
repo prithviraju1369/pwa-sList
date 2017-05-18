@@ -24,7 +24,7 @@ export class AppComponent implements AfterViewInit,OnInit{
   direction = 'undefined'// Swipe direction
   minDistanceXAxis = 30;// Min distance on mousemove or touchmove on the X axis
   maxDistanceYAxis = 30;// Max distance on mousemove or touchmove on the Y axis
-  maxAllowedTime = 2000;// Max allowed time between swipeStart and swipeEnd
+  maxAllowedTime = 1000;// Max allowed time between swipeStart and swipeEnd
   startTime = 0;// Time on swipeStart
   elapsedTime = 0;// Elapsed time between swipeStart and swipeEnd
   targetElement;// Element to delegate
