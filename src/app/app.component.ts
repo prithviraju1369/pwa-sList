@@ -24,7 +24,7 @@ export class AppComponent implements AfterViewInit,OnInit{
   direction = 'undefined'// Swipe direction
   minDistanceXAxis = 30;// Min distance on mousemove or touchmove on the X axis
   maxDistanceYAxis = 30;// Max distance on mousemove or touchmove on the Y axis
-  maxAllowedTime = 10000;// Max allowed time between swipeStart and swipeEnd
+  maxAllowedTime = 2000;// Max allowed time between swipeStart and swipeEnd
   startTime = 0;// Time on swipeStart
   elapsedTime = 0;// Elapsed time between swipeStart and swipeEnd
   targetElement;// Element to delegate
@@ -57,7 +57,6 @@ export class AppComponent implements AfterViewInit,OnInit{
   ngOnInit(){
     this.route.params
             .switchMap((params: Params) => {
-                debugger
                 return Observable.from([1,2,3]).map(x=>x);
             }).subscribe(c=>console.log(c));
   }
@@ -98,7 +97,7 @@ swipeEnd(e) {
   e = ('changedTouches' in e)?e.changedTouches[0] : e;
   self.touchEndCoords = {'x':e.pageX - self.touchStartCoords.x, 'y':e.pageY - self.touchStartCoords.y};
   self.elapsedTime = new Date().getTime() - self.startTime;
-  if (self.elapsedTime <= self.maxAllowedTime){
+  if (self.elapsedTime > self.maxAllowedTime){
     if (Math.abs(self.touchEndCoords.x) >= self.minDistanceXAxis && Math.abs(self.touchEndCoords.y) <= self.maxDistanceYAxis){
       self.direction = (self.touchEndCoords.x < 0)? 'left' : 'right';
       switch(self.direction){
