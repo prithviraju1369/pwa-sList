@@ -89,7 +89,7 @@ swipeStart(e) {
 
 swipeMove(e){
   e = e ? e : window.event;
-  e.preventDefault();
+  // e.preventDefault();
 }
 
 swipeEnd(e) {
