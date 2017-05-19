@@ -4,14 +4,17 @@
     <span class="sl-spacer"></span>
   </md-toolbar>
   <nav md-tab-nav-bar>
-    <a md-tab-link *ngFor="let tab of navLinks" [ngClass]="{'active': rla.isActive}" [routerLink]="tab.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+    <a md-tab-link *ngFor="let tab of navLinks" [ngClass]="{'active': rla.isActive}" [routerLink]="tab.link" routerLinkActive
+      #rla="routerLinkActive" [active]="rla.isActive">
     {{tab.label}}
   </a>
   </nav>
   <div id="mainContainer">
     <div class="load-container" id="loadContainer">
-        <div class="loader"></div>
+      <div class="loader"></div>
     </div>
-    <router-outlet></router-outlet>
+    <div class="container-loading" id="content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

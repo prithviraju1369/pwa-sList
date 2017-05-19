@@ -126,6 +126,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     if (currIndex != index) {
       this.router.navigate([navigateTo]);
       this.el.nativeElement.querySelector('#loadContainer').classList.remove('container-loading');
+      this.el.nativeElement.querySelector('#content').classList.add('container-loading');
     }
   }
 
@@ -139,6 +140,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     let navigateTo = this.navLinks[index].link;
     if (currIndex != index) {
       this.router.navigate([navigateTo]);
+      this.el.nativeElement.querySelector('#loadContainer').classList.remove('container-loading');
+      this.el.nativeElement.querySelector('#content').classList.add('container-loading');
     }
   }
 
