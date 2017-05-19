@@ -39,10 +39,12 @@ export class AppComponent implements AfterViewInit,OnInit{
         private router: Router) {
     let self=this;
     let navEle;
-    var source$ = Observable.fromEvent(window, 'scroll').debounceTime(10);
+    var source$ = Observable.fromEvent(window, 'scroll').debounceTime(500);
     source$.subscribe((x:any)=>{
+      console.log(window.scrollY);
       navEle=self.el.nativeElement.getElementsByTagName('nav');
-       if(window.scrollY || window.pageYOffset >64){
+      let ScreenYPos=window.scrollY || window.pageYOffset;
+       if((ScreenYPos) >64){
           if(navEle && navEle.length>0){
             navEle[0].classList.add('fixed');
           }

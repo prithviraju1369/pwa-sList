@@ -18,5 +18,5 @@ nav.fixed {
     left: 0;
     right: 0;
     z-index:999;
-    transition:0.2s top cubic-bezier(.3,.73,.3,.74);
+    transition:0.2s all cubic-bezier(.3,.73,.3,.74);
 }
