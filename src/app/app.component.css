@@ -20,3 +20,6 @@ nav.fixed {
     z-index:999;
     transition:0.2s all cubic-bezier(.3,.73,.3,.74);
 }
+md-toolbar.hide{
+    display: none;
+}

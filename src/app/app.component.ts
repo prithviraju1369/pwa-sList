@@ -39,18 +39,22 @@ export class AppComponent implements AfterViewInit,OnInit{
         private router: Router) {
     let self=this;
     let navEle;
+    let toolBarELe;
     var source$ = Observable.fromEvent(window, 'scroll').debounceTime(500);
     source$.subscribe((x:any)=>{
       console.log(window.scrollY);
       navEle=self.el.nativeElement.getElementsByTagName('nav');
+      toolBarELe=self.el.nativeElement.getElementsByTagName('md-toolbar');
       let ScreenYPos=window.scrollY || window.pageYOffset;
        if((ScreenYPos) >64){
           if(navEle && navEle.length>0){
             navEle[0].classList.add('fixed');
+            toolBarELe[0].classList.add('hide');
           }
        }else{
          if(navEle && navEle.length>0){
             navEle[0].classList.remove('fixed');
+            toolBarELe[0].classList.remove('hide');
          }
        }
     });
