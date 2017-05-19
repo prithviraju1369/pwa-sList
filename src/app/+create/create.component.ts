@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,AfterViewInit, ElementRef} from '@angular/core';
 
 import {create} from './../modal/create';
 
@@ -7,12 +7,20 @@ import {create} from './../modal/create';
     styleUrls:['./create.component.scss'],
     templateUrl: './create.component.html',
 })
-export class CreateComponent{
+export class CreateComponent implements AfterViewInit{
     private users=[];
     public sList:create={};
-    constructor() {
+    constructor(private el: ElementRef) {
         this.sList.users=[];
     }
+
+    ngAfterViewInit(){
+        debugger
+        let loadEle = this.el.nativeElement.parentNode.querySelector('#loadContainer');
+        loadEle.classList.add('container-loading');
+        
+    }
+
     addUsers(){
         let obj={};
         this.sList.users.push(obj);

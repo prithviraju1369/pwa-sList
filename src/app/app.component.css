@@ -23,3 +23,6 @@ nav.fixed {
 md-toolbar.hide{
     display: none;
 }
+.container-loading{
+    display: none;
+}
