@@ -37,27 +37,27 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   constructor(private el: ElementRef, private renderer: Renderer, private route: ActivatedRoute,
     private router: Router) {
-    // let self = this;
-    // let navEle;
-    // let toolBarELe;
-    // var source$ = Observable.fromEvent(window, 'scroll').debounceTime(500);
-    // source$.subscribe((x: any) => {
-    //   console.log(window.scrollY);
-    //   navEle = self.el.nativeElement.getElementsByTagName('nav');
-    //   toolBarELe = self.el.nativeElement.getElementsByTagName('md-toolbar');
-    //   let ScreenYPos = window.scrollY || window.pageYOffset;
-    //   if ((ScreenYPos) > 64) {
-    //     if (navEle && navEle.length > 0) {
-    //       navEle[0].classList.add('fixed');
-    //       toolBarELe[0].classList.add('hide');
-    //     }
-    //   } else {
-    //     if (navEle && navEle.length > 0) {
-    //       navEle[0].classList.remove('fixed');
-    //       toolBarELe[0].classList.remove('hide');
-    //     }
-    //   }
-    // });
+    let self = this;
+    let navEle;
+    let mainContainerEle;
+    var source$ = Observable.fromEvent(window, 'scroll');
+    source$.subscribe((x: any) => {
+      console.log(window.scrollY);
+      navEle = self.el.nativeElement.getElementsByTagName('nav');
+      mainContainerEle=self.el.nativeElement.querySelector('#mainContainer');
+      let ScreenYPos = window.scrollY || window.pageYOffset;
+      if ((ScreenYPos) > 70) {
+        if (navEle && navEle.length > 0) {
+          navEle[0].classList.add('fixed');
+          mainContainerEle.classList.add('fixedmargin');
+        }
+      } else {
+        if (navEle && navEle.length > 0) {
+          navEle[0].classList.remove('fixed');
+          mainContainerEle.classList.add('fixedmargin');
+        }
+      }
+    });
   }
 
   ngOnInit() {
@@ -78,7 +78,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   setScroll() {
     let toolBar = this.el.nativeElement.querySelector('md-toolbar').style.height;
     let navBar = this.el.nativeElement.querySelector('nav').style.height;
-    this.el.nativeElement.querySelector('#mainContainer').style.height = (window.innerHeight - 112) + 'px';
+    this.el.nativeElement.querySelector('#mainContainer').style.height = 'inherit';
   }
 
   swipeStart(e) {

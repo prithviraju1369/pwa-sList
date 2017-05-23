@@ -12,16 +12,16 @@ nav{
     opacity: 1;
     outline: 0;
 }
-nav.fixed {
-    position:fixed;
+.fixed {
+    position:fixed !important;
     top:0;
     left: 0;
     right: 0;
     z-index:999;
     transition:0.2s all cubic-bezier(.3,.73,.3,.74);
 }
-md-toolbar.hide{
-    display: none;
+.fixedmargin{
+    margin-top:50px; 
 }
 .container-loading{
     display: none;
