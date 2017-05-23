@@ -54,7 +54,7 @@ export class AppComponent implements AfterViewInit, OnInit {
       } else {
         if (navEle && navEle.length > 0) {
           navEle[0].classList.remove('fixed');
-          mainContainerEle.classList.add('fixedmargin');
+          mainContainerEle.classList.remove('fixedmargin');
         }
       }
     });
