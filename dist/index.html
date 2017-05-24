@@ -1,64 +1,242 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>P1</title>
-  <base href="/">
-  <meta name="theme-color" content="#0D6A71">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="/manifest.json">
-  <style>
-    html {
-      height: 100vh;
-      max-width:100vw;
-      overflow-x: hidden;
-      /*box-sizing: border-box;*/
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
-    body{
-        position: relative;
-        margin: 0;
-        /*padding-bottom: 6rem;*/
-        font-family: "Helvetica Neue", Arial, sans-serif;
-    }
-    .load-container{
-        position: relative;
-        display: flex;
-        height:50vh;
-        align-items: center;
-        justify-content: center;
-    }
-    .loader {
-        border: 16px solid #f3f3f3;
-        /* Light grey */
-        border-top: 16px solid #009688;
-        /* Blue */
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
+    <meta charset="utf-8">
+    <title>P1</title>
+    <base href="/">
+    <meta name="theme-color" content="#0D6A71">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        html {
+            height: 100vh;
+            max-width: 100vw;
+            overflow-x: hidden;
+            /*box-sizing: border-box;*/
         }
-        100% {
-            transform: rotate(360deg);
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
         }
-    }
-  </style>
+        
+        body {
+            position: relative;
+            margin: 0;
+            /*padding-bottom: 6rem;*/
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        .initial-load {
+            display: flex;
+            height: 50vh;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .item-1,
+        .item-2,
+        .item-3,
+        .item-4,
+        .item-5,
+        .item-6,
+        .item-7 {
+            position: absolute;
+            /*display: block;*/
+            background-color: #00897b;
+            color: #fff;
+            padding: 16px;
+            border-radius: 5px;
+            box-shadow: 0 1px 1px rgba(12, 13, 14, 0.1), 0 1px 3px rgba(12, 13, 14, 0.1), 0 4px 20px rgba(12, 13, 14, 0.035), 0 1px 1px rgba(12, 13, 14, 0.025);
+            top: 50%;
+            width: 40%;
+            text-align: center;
+            font-size: 1em;
+            animation-duration: 50s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        .item-1 {
+            animation-name: anim-1;
+        }
+        
+        .item-2 {
+            animation-name: anim-2;
+        }
+        
+        .item-3 {
+            animation-name: anim-3;
+        }
+        
+        .item-4 {
+            animation-name: anim-4;
+        }
+        
+        .item-5 {
+            animation-name: anim-5;
+        }
+        
+        .item-6 {
+            animation-name: anim-6;
+        }
+        
+        .item-7 {
+            animation-name: anim-7;
+        }
+        
+        @keyframes anim-1 {
+            0%,
+            2.3%,
+            15% {
+                left: 25%;
+                opacity: 1;
+            }
+            15%,
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes anim-2 {
+            0%,
+            13% {
+                left: -100%;
+                opacity: 0;
+            }
+            15%,
+            30% {
+                left: 25%;
+                opacity: 1;
+            }
+            30%,
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes anim-3 {
+            0%,
+            25% {
+                left: -100%;
+                opacity: 0;
+            }
+            30%,
+            45% {
+                left: 25%;
+                opacity: 1;
+            }
+            45%,
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes anim-4 {
+            0%,
+            40% {
+                left: -100%;
+                opacity: 0;
+            }
+            45%,
+            60% {
+                left: 25%;
+                opacity: 1;
+            }
+            60%,
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes anim-5 {
+            0%,
+            55% {
+                left: -100%;
+                opacity: 0;
+            }
+            60%,
+            75% {
+                left: 25%;
+                opacity: 1;
+            }
+            75%,
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes anim-6 {
+            0%,
+            70% {
+                left: -100%;
+                opacity: 0;
+            }
+            75%,
+            85% {
+                left: 25%;
+                opacity: 1;
+            }
+            85%,
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes anim-7 {
+            0%,
+            80% {
+                left: -100%;
+                opacity: 0;
+            }
+            85%,
+            97% {
+                left: 25%;
+                opacity: 1;
+            }
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+    </style>
 <link href="styles.cbb28a0718f351211038.bundle.css" rel="stylesheet"/></head>
+
 <body>
-  <app-root>
-    <div class="load-container">
-        <div class="loader"></div>
-    </div></app-root>
-<script type="text/javascript" src="inline.7b2154a3b628172ef096.bundle.js"></script><script type="text/javascript" src="polyfills.2381e1df9bc09d9cf311.bundle.js"></script><script type="text/javascript" src="vendor.c381b910097de8573750.bundle.js"></script><script type="text/javascript" src="main.8b69cdd195ca694245f6.bundle.js"></script></body>
+    <app-root>
+        <div class="initial-load">
+            <div class="item-1">
+                <p>HI, Welcome to Shopping List. Create Shopping List. Add Users with Email</p>
+            </div>
+            <div class="item-2">
+                <p>A Welcome email triggers to users, to access the created shopping list</p>
+            </div>
+            <div class="item-3">
+                <p>Manage shopping list, by adding articles. Edit articles.</p>
+            </div>
+            <div class="item-4">
+                <p>Add articles to your custom categories.</p>
+            </div>
+            <div class="item-5">
+                <p>Complete your shopping list. An email with latest amount Owed/Debts to all users</p>
+            </div>
+            <div class="item-6">
+                <p>Click ADD TO HOME SCREEN to instantly access the app.</p>
+            </div>
+            <div class="item-7">
+                <p>To receive notifications. Click Allow.</p>
+            </div>
+        </div>
+    </app-root>
+<script type="text/javascript" src="inline.7847aa89143143f71810.bundle.js"></script><script type="text/javascript" src="polyfills.2381e1df9bc09d9cf311.bundle.js"></script><script type="text/javascript" src="vendor.c381b910097de8573750.bundle.js"></script><script type="text/javascript" src="main.780e1cb22f4a4e80ac74.bundle.js"></script></body>
+
 </html>
